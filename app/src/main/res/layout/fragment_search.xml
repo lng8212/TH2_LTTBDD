@@ -14,17 +14,8 @@
         android:layout_marginTop="10dp"
         app:iconifiedByDefault="false"
         app:queryHint="Nhap"/>
-    <EditText
-        android:id="@+id/eFrom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tu thoi gian"/>
-    <EditText
-        android:id="@+id/eTo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Den thoi gian"/>
     <LinearLayout
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -36,6 +27,7 @@
             android:layout_height="wrap_content"
             />
         <Button
+            android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search"
@@ -52,7 +44,7 @@
         android:layout_marginStart="20dp"
         />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView"
+        android:id="@+id/searchRecycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"/>

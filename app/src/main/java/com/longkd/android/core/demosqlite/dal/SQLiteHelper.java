@@ -62,6 +62,24 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return st.insert("items",null,values);
     }
 
+    public List<Item> getFromDateToDateAndName(String name){
+        List<Item> list=new ArrayList<>();
+        String query = "SELECT * FROM items WHERE title LIKE '%' || ? || '%'";
+        String[] selectionArgs = { name};
+        SQLiteDatabase st=getReadableDatabase();
+
+        Cursor rs = st.rawQuery(query, selectionArgs);
+
+        while(rs!=null && rs.moveToNext()){
+            int id = rs.getInt(0);
+            String title = rs.getString(1);
+            String c = rs.getString(2);
+            String p = rs.getString(3);
+            String d = rs.getString(4);
+            list.add(new Item(id, title, c, p, d));
+        }
+        return list;
+    }
     public List<Item> getByDate(String date){
         List<Item> list=new ArrayList<>();
         String whereClause = "date like ?";

@@ -81,7 +81,6 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
             String p = ePrice.getText().toString();
             String c = sp.getSelectedItem().toString();
             String d = eDate.getText().toString();
-
             if (!t.isEmpty() && p.matches("\\d+")) {
                 Item i = new Item(t, c, p, d);
 
